@@ -93,13 +93,25 @@ def spaceman(secret_word):
     print("Your guess is {}".format(secret_word))
 
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
+    amount_of_guesses = []
+    life = 7
+    while life > 0 and is_word_guessed(secret_word, amount_of_guesses) == False:
+        user_guess = input("user input")
+        #amount_of_guesses = is_guess_in_word(user_guess, secret_word)
+        amount_of_guesses.append(user_guess)
+        print("You have" + str(life) + "guesses")
 
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
-
+    
 
     #TODO: show the guessed word so far
+    print(is_guess_in_word)
 
     #TODO: check if the game has been won or lost
+    if secret_word == secret_word:
+        print("You have won the game!!!!!!")
+    else:
+        print("Oh no!! You have run out of attempts      :((((((")
     
 
 
