@@ -1,4 +1,4 @@
-import random, collections
+import random
 
 
 
@@ -102,10 +102,14 @@ def spaceman(secret_word):
         print("You have" + str(life) + "guesses")
 
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
-    
+    correct = is_guess_in_word(user_guess, secret_word)
+    if correct:
+        print ("Nice job!")
+    else: 
+        print ("incorrect. Guess again!")
 
     #TODO: show the guessed word so far
-    print(is_guess_in_word)
+    print (get_guessed_word(secret_word, amount_of_guesses))
 
     #TODO: check if the game has been won or lost
     if secret_word == secret_word:
