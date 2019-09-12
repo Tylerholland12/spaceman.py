@@ -1,7 +1,5 @@
 import random
 
-
-
 def load_word():
     '''
     A function that reads a text file of words and randomly selects one to use as the secret word
@@ -27,11 +25,11 @@ def is_word_guessed(secret_word, letters_guessed):
         bool: True only if all the letters of secret_word are in letters_guessed, False otherwise
     '''
     # TODO: Loop through the letters in the secret_word and check if a letter is not in lettersGuessed
-    letters_in_array = []      #change the name of the empty array
-    for letters_in_array in secret_word:
-        if letters_in_array in letters_guessed: 
-            letters_in_array.append(letters_in_array)
-        return secret_word == letters_in_array
+    letters = []      #change the name of the empty array
+    for letters in secret_word:
+        if letters in letters_guessed: 
+            letters.append(letters)
+        return secret_word == letters
 
 
 
@@ -46,14 +44,14 @@ def get_guessed_word(secret_word, letters_guessed):
         the string should contain the letter at the correct position.  
         For letters in the word that the user has not yet guessed, shown an _ (underscore) instead.
     '''
-    letters_in_array = []
+    letters = []
     for letters_guessed in secret_word:
         if letters_guessed in letters_guessed:
-            letters_in_array.append(letters_in_array)
-        # return secret_word == letters_in_array
+            letters.append(letters)
+        # return secret_word == letters
         else:
-            letters_in_array.append('_')
-    return "".join(letters_in_array)
+            letters.append('_')
+    return "".join(letters)
 
 
     #TODO: Loop through the letters in secret word and build a string that shows the letters that have been guessed correctly so far that are saved in letters_guessed and underscores for the letters that have not been guessed yet
